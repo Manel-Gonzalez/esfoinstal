@@ -9,8 +9,6 @@ const ClienteHome = () => {
 
   useEffect(() => {
     // Esto funcionará tanto en Vercel (producción) como en local si tienes proxy o variable de entorno
-    console.log("primeruseEffect");
-
     fetch(`${API_BASE}/test`)
       .then((res) => res.json())
       .then((data) => setMessage(data.message))

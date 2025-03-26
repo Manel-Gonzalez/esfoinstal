@@ -5,6 +5,7 @@ const {Sequelize} = require("sequelize");
 const dbConfig = require("../config/config")["development"];
 const sequelize = new Sequelize(dbConfig);
 
+const testRoute = require("../routes/testRoute");
 const PORT = process.env.PORT || 5000;
 
 const app = express();
@@ -21,7 +22,6 @@ app.get("/", (req, res) => {
   res.send("🚀 Backend working with SQLite & Express");
 });
 
-const testRoute = require("../routes/testRoute");
 app.use("/api/test", testRoute);
 
 if (require.main === module) {
