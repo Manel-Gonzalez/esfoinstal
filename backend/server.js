@@ -26,8 +26,11 @@ app.use("/api/test", testRoute);
 
 /* const homeRoutes = require("./routes/home");
 app.use("/api/home", homeRoutes); */
-app.listen(PORT, () => {
-  console.log(`✅ Server http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
 
 module.exports = app;
