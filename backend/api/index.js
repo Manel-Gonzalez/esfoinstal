@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const {Sequelize} = require("sequelize");
-const dbConfig = require("./config/config.js")["development"];
+const dbConfig = require("../config/config")["development"];
 const sequelize = new Sequelize(dbConfig);
 
 const PORT = process.env.PORT || 5000;
@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
   res.send("🚀 Backend working with SQLite & Express");
 });
 
-const testRoute = require("./routes/testRoute");
+const testRoute = require("../routes/testRoute");
 app.use("/api/test", testRoute);
 
 if (require.main === module) {
