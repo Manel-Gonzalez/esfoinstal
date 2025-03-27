@@ -19,5 +19,8 @@
             "src": "/(.*)",
             "dest": "/frontend/$1"
         }
-    ]
+    ],
+    "scripts": {
+        "build": "echo 'no build needed'"
+    }
 }
