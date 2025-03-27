@@ -2,10 +2,10 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const {Sequelize, DataTypes} = require("sequelize");
-const dbConfig = require("../config/config.js")["development"];
+const dbConfig = require("./config/config.js")["development"];
 console.log("DB CONFIG:", dbConfig);
 
-const testRoute = require("../routes/testRoute");
+const testRoute = require("./routes/testRoute.js");
 const PORT = process.env.PORT || 5000;
 
 const app = express();
@@ -25,7 +25,7 @@ sequelize = new Sequelize(
   }
 );
 
-const Test = require("../models/test")(sequelize, DataTypes);
+const Test = require("./models/test.js")(sequelize, DataTypes);
 
 sequelize.sync().then(async () => {
   console.log("🗂️ Models synced");
