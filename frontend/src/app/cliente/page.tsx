@@ -15,10 +15,6 @@ const ClienteHome = () => {
       .catch((err) => console.error("Error:", err));
   }, []);
 
-  useEffect(() => {
-    console.log("use", message);
-  }, [setMessage]);
-
   const content: Record<string, Content> = {
     es: {
       title: "Bienvenido a Esfoinstal",
