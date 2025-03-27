@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const {Sequelize, DataTypes} = require("sequelize");
 const dbConfig = require("../config/config.js")["development"];
+console.log("DB CONFIG:", dbConfig);
 
 const testRoute = require("../routes/testRoute");
 const PORT = process.env.PORT || 5000;
