@@ -1,10 +1,23 @@
+require("dotenv").config();
+
 module.exports = {
   development: {
-    username: "railway",
-    password: "8SBHy.hYIei~rJgb6WmcTYMcUw0lKVfr",
-    database: "railway",
-    host: "shuttle.proxy.rlwy.net",
-    port: 13420,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: "mariadb",
+    dialectOptions: {
+      connectTimeout: 10000,
+    },
+  },
+  production: {
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
     dialect: "mariadb",
     dialectOptions: {
       connectTimeout: 10000,
